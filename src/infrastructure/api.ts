@@ -1,10 +1,10 @@
 export interface JsonApiKeys<T> {
   type: string;
-  id: number;
+  id: string;
   attributes: T
 }
 
 
 export interface HasDataKey<K> {
-  data: JsonApiKeys<K>
+  data: JsonApiKeys<K>[];
 }
