@@ -1,21 +1,35 @@
 import {Injectable, InjectionToken} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Member} from "../../domain/model/member.model";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {HasDataKey} from "../api";
+import {map} from "rxjs/operators";
+import {Member} from "../../domain/model/member.model";
+import {MemberResponseModel} from "../member-response.model";
 
 export interface GetMembersService {
-  getMembers()
+  getMembers(memberNumber: string)
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpGetMembersService implements GetMembersService {
+  protected readonly httpHeaders: HttpHeaders;
+
   constructor(private httpClient: HttpClient) { }
 
-  getMembers(): Observable<Member[]> {
+  getMembers(memberOrdinalNumber: string): Observable<Member> {
     return this.httpClient
-      .get() // TODO: work on it
+      .get<HasDataKey<MemberResponseModel>>(
+        'https://cobiro-website-builder.s3-eu-west-1.amazonaws.com/task/index.json',
+        { headers: this.httpHeaders}
+      )
+      .pipe(
+        map(response => {
+          return Member.fromJson(response.data.attributes[memberOrdinalNumber])
+
+        })
+      )
   }
 }
 
