@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: TeamComponent,
-    // resolve: {team: TeamResolver}
+    resolve: {team: TeamResolver}
   }
 ];
 
