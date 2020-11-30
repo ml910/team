@@ -4,8 +4,9 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {TeamComponent} from './ui/team/team.component';
 import {MemberComponent} from './ui/team/member/member.component';
-// import {TeamResolver} from "./infrastructure/team.resolver";
 import {HttpClientModule} from "@angular/common/http";
+import {GET_TEAM, JsonGetTeamMembersService} from "./infrastructure/get-team/get-team.service";
+import {TeamResolver} from "./infrastructure/team.resolver";
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule
   ],
-  // providers: [TeamResolver],
   bootstrap: [TeamComponent],
+  providers: [{provide: GET_TEAM, useClass: JsonGetTeamMembersService}, TeamResolver],
   exports: [TeamComponent, MemberComponent]
 })
 export class AppModule {

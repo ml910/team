@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {JsonGetTeamMembersService} from "../../infrastructure/get-team/get-team.service";
+import {Team} from "../../domain/model/team.model";
 
 @Component({
   selector: 'app-root',
@@ -6,10 +9,15 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
+  team: Team;
 
-  constructor() {}
+  constructor(private service: JsonGetTeamMembersService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
-
+    this.route.data.subscribe(
+      data => {
+        this.team = data['team']
+      }
+    )
   }
 }

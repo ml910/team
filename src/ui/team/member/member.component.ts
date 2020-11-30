@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {MemberDetailsModel, SrcSetModel} from "../../../domain/model/member.model";
 
 @Component({
   selector: 'app-member',
   templateUrl: './member.component.html',
   styleUrls: ['./member.component.scss']
 })
-export class MemberComponent implements OnInit {
+export class MemberComponent {
+
+  @Input() memberImage: SrcSetModel;
+  @Input() memberDetails: MemberDetailsModel;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
