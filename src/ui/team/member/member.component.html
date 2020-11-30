@@ -1,1 +1,13 @@
-<p>member works!</p>
+<ng-container *ngIf="members$ | async; let member; else noMembersToShow">
+  <p>Our team</p>
+  <div>
+    <p>{{member.personalDetails.names}}</p>
+    <p>{{member.personalDetails.position}}</p>
+    <p>{{member.personalDetails.email}}</p>
+    <p>{{member.personalDetails.phoneNumber}}</p>
+  </div>
+</ng-container>
+
+<ng-template #noMembersToShow>
+  <p>Sorry, currently the Team Member list is empty</p>
+</ng-template>

@@ -7,7 +7,7 @@ import {Member} from "../../domain/model/member.model";
 import {MemberResponseModel} from "../member-response.model";
 
 export interface GetMembersService {
-  getMembers(memberNumber: string)
+  getMembers(memberNumber: string): Observable<Member>;
 }
 
 @Injectable({
@@ -18,16 +18,15 @@ export class HttpGetMembersService implements GetMembersService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getMembers(memberOrdinalNumber: string): Observable<Member> {
+  getMembers(): Observable<Member> {
     return this.httpClient
       .get<HasDataKey<MemberResponseModel>>(
         'https://cobiro-website-builder.s3-eu-west-1.amazonaws.com/task/index.json',
-        { headers: this.httpHeaders}
+        // { headers: this.httpHeaders }
       )
       .pipe(
         map(response => {
-          return Member.fromJson(response.data.attributes[memberOrdinalNumber])
-
+          return Member.fromJson(response.data.attributes)
         })
       )
   }

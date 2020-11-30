@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import {TeamComponent} from "./ui/team/team.component";
 
 const routes: Routes = [
-  {
-    path: '',
-    component: TeamComponent
-  }
+  // {
+  //   path: '',
+  //   component: TeamComponent
+  // }
 ];
 
 @NgModule({
