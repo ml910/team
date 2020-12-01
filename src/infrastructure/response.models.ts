@@ -2,7 +2,7 @@ import {SrcSetModel} from "../domain/model/member.model";
 
 export interface TeamResponseAttributes {
   title: string;
-  memberCards: MemberResponseCounter[];
+  memberCards: MemberResponseAttributes[];
 }
 
 export interface MemberResponseCounter {

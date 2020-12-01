@@ -6,5 +6,5 @@ export interface JsonApiKeys<T> {
 
 
 export interface HasDataKey<K> {
-  data: JsonApiKeys<K>[];
+  data: JsonApiKeys<K>;
 }

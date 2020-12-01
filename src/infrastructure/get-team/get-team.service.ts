@@ -22,7 +22,7 @@ export class JsonGetTeamMembersService implements GetTeamService {
         '/assets/local.json'
       )
       .pipe(map((jsonResponse) => Team.fromJson(
-        jsonResponse.data[0].attributes[0], jsonResponse.data[0].attributes[1]
+        jsonResponse.data[0].attributes
         )))
   }
 }
