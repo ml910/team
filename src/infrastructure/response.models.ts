@@ -5,10 +5,6 @@ export interface TeamResponseAttributes {
   memberCards: MemberResponseAttributes[];
 }
 
-export interface MemberResponseCounter {
-  (index: string): MemberResponseAttributes // first, second, third
-}
-
 export interface MemberResponseAttributes {
   imageUrl: SrcSetModel,
   block: MemberDetailsResponseAttributes

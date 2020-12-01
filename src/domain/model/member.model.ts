@@ -3,10 +3,6 @@ export class Member {
   }
 }
 
-export interface MemberDetailsBlockModel {
-  block: MemberDetailsModel
-}
-
 export class MemberDetailsModel {
   constructor(
     public names: string,
