@@ -1,7 +1,7 @@
 <ng-container *ngIf="members$ | async as team; else: spinner" class="">
   <div class="p-2">
     <div class="team-container p-5 border">
-      <h2 class="d-flex justify-content-center align-items-center pb-5 font-weight-bold font--color-toned">{{team.mainTitle}}</h2>
+      <h2 class="d-flex justify-content-center align-items-center pb-5 font-weight-bold font--color-toned" data-selector="our-team">{{team.mainTitle}}</h2>
       <section class="d-flex align-items-start justify-content-center">
         <app-member class="col-4 mw-100" *ngFor="let member of team.members"
                     [memberImage]="member.srcSet"
