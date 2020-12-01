@@ -1,9 +1,9 @@
 <section class="single-member-card">
-  <div class="member-image-wrapper">
-    <img [src]="memberImage.w200" [srcset]="memberImage.getSrcSetValue()" [alt]="memberDetails.names" />
+  <div class="member-image-container">
+    <img class="member-image img-fluid" [src]="memberImage.w200" [srcset]="memberImage.getSrcSetValue()" [alt]="memberDetails.names" />
   </div>
-  <article class="member-details">
-    <p>{{memberDetails.names}}</p>
+  <ul class="text-break p-4">
+    <p class="font-size-medium font-weight-bold font-color-toned mb-0">{{memberDetails.names}}</p>
     <ng-content></ng-content>
-  </article>
+  </ul>
 </section>

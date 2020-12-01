@@ -1,15 +1,19 @@
-<ng-container *ngIf="members$ | async as team; else: spinner">
-  <div class="team-container">
-    <h3>{{team.mainTitle}}</h3>
-    <app-member *ngFor="let member of team.members"
-                [memberImage]="member.srcSet"
-                [memberDetails]="member.details">
-      <div class="projected-details">
-        <p>{{member.details.position}}</p>
-        <p>{{member.details.email}}</p>
-        <p>{{member.details.phoneNumber}}</p>
-      </div>
-    </app-member>
+<ng-container *ngIf="members$ | async as team; else: spinner" class="">
+  <div class="p-2">
+    <div class="team-container p-5 border">
+      <h2 class="d-flex justify-content-center align-items-center pb-3 font-weight-bold">{{team.mainTitle}}</h2>
+      <section class="members-container d-flex align-items-start justify-content-center">
+        <app-member class="single-member col-4 mw-100" *ngFor="let member of team.members"
+                    [memberImage]="member.srcSet"
+                    [memberDetails]="member.details">
+          <div class="projected-details">
+            <p class="font-size-medium font-color-secondary mb-0 mt-1">{{member.details.position}}</p>
+            <p class="font-size-medium font-color-primary mb-0 mt-3">{{member.details.email}}</p>
+            <p class="font-size-medium font-color-secondary mb-0 mt-1">{{member.details.phoneNumber}}</p>
+          </div>
+        </app-member>
+      </section>
+    </div>
   </div>
 </ng-container>
 
