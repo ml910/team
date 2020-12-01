@@ -4,33 +4,15 @@ $size-small: 12px;
 $size-medium: 15px;
 $size-large: 18px;
 
+.text {
+  font-size: $size-medium;
+  color: $c-text-secondary;
+}
 
-.font {
-  &-size {
-    &-small {
-      font-size: $size-small;
-    }
+.text--color-primary {
+  color: $c-text-primary;
+}
 
-    &-medium {
-      font-size: $size-medium;
-    }
-
-    &-large {
-      font-size: $size-large;
-    }
-  }
-
-  &-color {
-    &-secondary {
-      color: $c-text-grey;
-    }
-
-    &-toned {
-      color: $c-title-navy;
-    }
-
-    &-primary {
-      color: $c-link-default;
-    }
-  }
+.text--color-toned {
+  color: $c-title-navy;
 }
