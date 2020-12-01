@@ -1,6 +1,6 @@
 <section class="single-member-card">
   <div class="member-image-wrapper">
-    <img src="{{memberImage}}">
+    <img [src]="memberImage.w200" [srcset]="memberImage.getSrcSetValue()" [alt]="memberDetails.names" />
   </div>
   <article class="member-details">
     <p>{{memberDetails.names}}</p>

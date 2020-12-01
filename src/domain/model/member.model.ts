@@ -3,11 +3,6 @@ export class Member {
   }
 }
 
-export class MemberCollection {
-  constructor(public first: Member, public second: Member, public third: Member) {
-  }
-}
-
 export interface MemberDetailsBlockModel {
   block: MemberDetailsModel
 }
@@ -22,6 +17,9 @@ export class MemberDetailsModel {
 }
 
 export class SrcSetModel {
-  constructor(public w200: string, public w400: string, public w1080: string, public w1920: string, public w2560: string) {
-  return new SrcSetModel(this.w200, this.w400, this.w1080, this.w1920, this.w2560)}
+  getSrcSetValue() {
+    return `${this.w200} 200w, ${this.w400} 400w, ${this.w1080} 1080w, ${this.w1920} 1920w, ${this.w2560} 2560w`
+  }
+
+  constructor(public w200: string, public w400: string, public w1080: string, public w1920: string, public w2560: string) {}
 }
