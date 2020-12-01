@@ -2,7 +2,7 @@ import {Injectable, InjectionToken} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Team} from "../../domain/model/team.model";
-import {HasDataKey} from "../api";
+import {HasDataKey} from "../api-interfaces";
 import {map} from "rxjs/operators";
 import {TeamResponseAttributes} from "../response.models";
 

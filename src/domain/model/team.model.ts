@@ -1,5 +1,5 @@
-import {Member, MemberDetailsModel} from "./member.model";
-import {MemberResponseAttributes, TeamResponseAttributes} from "../../infrastructure/response.models";
+import {Member} from "./member.model";
+import {TeamResponseAttributes} from "../../infrastructure/response.models";
 
 export class Team {
   constructor(public mainTitle: string, public members: Member[]) {
